@@ -30,6 +30,20 @@
                         </x-jet-nav-link>
                     </div>
                 @endcan
+                @can('permission_access')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('permissions.index') }}" :active="request()->routeIs('permissions.*')">
+                        Permissions
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                @can('user_access')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('roles.index') }}" :active="request()->routeIs('roles.*')">
+                        Roles
+                    </x-jet-nav-link>
+                </div>
+                @endcan
             </div>
 
             <!-- Settings Dropdown -->
